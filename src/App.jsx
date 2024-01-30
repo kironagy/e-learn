@@ -1,15 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Sidebar from './components/sidebar';
+import Header from './components/header';
+import img1 from './assets/images/Untitled-65.png'
+import img2 from './assets/images/Untitled-4.png'
+import Announcements from './pages/Announcements';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-        <h1 className='text-orange-100'>TESt</h1>       
-    </>
+    <div>
+          <div  className='page'>
+          <img className="logo" src={img1} alt="" />
+            <img className="logo-responsive" src={img2}  alt="" />
+            <Sidebar/> 
+            <div className='content'>
+                 <Header/>
+                 <Announcements/>
+            </div>
+        </div>
+    </div>
   )
 }
 
