@@ -2,7 +2,7 @@ import "../assets/css/style.css";
 import "../assets/css/responsive.css";
 
 import avatar from "../assets/images/avatar.jpg";
-
+import { lang } from '../base/lang';
 import { useEffect, useState } from "react";
 
 function Sidebar () {
@@ -30,9 +30,9 @@ function Sidebar () {
 
   };
   return (
-    <div className={`sidebar ${isOpen ? "w-[300px]":"w-[62px]"}`}>
+    <div className={`sidebar${lang("lang") == "Ar" ? "Ar" : ""} ${isOpen ? "w-[300px]":"w-[62px]"}`}>
       <div className="arrow" style={{ display:"none" }} onClick={toggleSidebar}>
-          <i className="fa-solid fa-arrow-left ml-[10px] mt-[30px]"></i>
+          <i className="fa-solid fa-arrow-left mx-[10px] mt-[30px]"></i>
       </div>
       <a href="#profile" className="profile">
         <img src={avatar} alt />
@@ -42,31 +42,31 @@ function Sidebar () {
         <li>
           <a href="#">
             <i class="fa-solid fa-house"></i>
-            <span className={!isOpen ? `hidden` : ``}>Main</span>
+            <span className={!isOpen ? `hidden` : ``}>{ lang("main") }</span>
           </a>
         </li>
         <li>
           <a className="active" href="#">
             <i class="fa-solid fa-chalkboard-user"></i>
-            <span className={!isOpen ? `hidden` : ``}>Classes</span>
+            <span className={!isOpen ? `hidden` : ``}>{ lang("classes") }</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class="fa-solid fa-square-poll-vertical"></i>
-            <span className={!isOpen ? `hidden` : ``}>Survey</span>
+            <span className={!isOpen ? `hidden` : ``}>{ lang("survey") }</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class="fa-solid fa-check-to-slot"></i>
-            <span className={!isOpen ? `hidden` : ``}>Voting</span>
+            <span className={!isOpen ? `hidden` : ``}>{ lang("voting") }</span>
           </a>
         </li>
         <li>
           <a href="#">
             <i className="fa-solid fa-bullhorn" />
-            <span className={!isOpen ? `hidden` : ``}>Announcements</span>
+            <span className={!isOpen ? `hidden` : ``}>{ lang("announcements") }</span>
           </a>
         </li>
         {/* <li>

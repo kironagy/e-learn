@@ -7,6 +7,7 @@
 @media(max-width:767px) {
     .page .sidebar {
         padding: 10px;
+        padding-right: 0;
     }
 
     .page .sidebar .arrow{
@@ -58,6 +59,68 @@
     .page .sidebar a.profile p{
         display: none;
     }
+
+
+    /* SideBar AR */
+    .page .sidebarAr {
+        padding: 10px;
+        padding-left: 0;
+    }
+
+    .page .sidebarAr .arrow{
+        display: block !important;
+    }
+
+    .page .sidebarAr li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+  
+    .page .sidebarAr ul li a {
+        justify-content: center;
+    }
+
+    .page .sidebarAr ul li span {
+        /* display: none; */
+    }
+
+    .page .sidebarAr li:hover::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        left: -5px;
+        top: -44px;
+        border-radius: 50%;
+        box-shadow: 35px 35px 0 10px var(--white);
+    transform: rotateZ(90deg);
+
+    }
+
+    .page .sidebarAr li:hover::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        left: -5px;
+
+        bottom: -44px;
+        border-radius: 50%;
+        box-shadow: 35px -35px 0 10px var(--white);
+        transform: rotateZ(-90deg);
+
+    }
+
+    .page .sidebarAr .profile img{
+        width: 40px;
+        margin-right: 0px;
+        margin-left: -10px;
+    }
+
+    .page .sidebarAr a.profile p{
+        display: none;
+    }
 }
 
 /* !SIDEBAR RESPONSIVE */
@@ -70,19 +133,30 @@ header .current-page{
 /* ! END HEADER */
 
 /* ! START LOGO RESPONSIVE */
-img.logo-responsive{
+img.logo-responsiveAr , img.logo-responsiveEn{
     display: none;
 }
 
+
 @media(max-width:767px){
-    img.logo{
+    img.logoAr{
         display: none;
     }
-    img.logo-responsive{
+    img.logoEn{
+        display: none;
+    }
+    img.logo-responsiveEn{
         display:block;
         position: absolute;
         width: 100px;
         left: -18px;
+        top: 30px;
+    }
+    img.logo-responsiveAr{
+        display:block;
+        position: absolute;
+        width: 100px;
+        right: -0px;
         top: 30px;
     }
 }
